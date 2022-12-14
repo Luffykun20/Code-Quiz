@@ -8,17 +8,17 @@
     <title>Code Quiz</title>
 </head>
 <body>
-    <section>
+    <section id="introduction">
         <heading> View Highscores              Time: 0 </heading>
         <h1> Coding Quiz Challenge </h1>
         <p> Try to answer the following code-related questions within the time
             limit. Keep in mind that incorrect answers will penalize your scoretime
              by ten seconds!
         </p>
-        <button id ="star-quiz"> Start Quiz </button>
+        <button id ="start-quiz"> Start Quiz </button>
     </section>
 
-    <section class = "hide">
+    <section id="question" class ="hide">
         <heading> Commonly used data types DO NOT include:</heading>
         <ol id ="choice-1">
             <li>strings</li>
@@ -28,19 +28,19 @@
         </ol>
     </section>
 
-    <section class = "hide">
+    <section id="scores" class = "hide">
         <heading> All done!</heading>
         <p> Your final score is 22. </p>
         Enter initials <input> <button> Submit </button>
     </section>
 
-    <section class = "hide">
+    <section id="highscores" class = "hide">
         <heading> Highscores </heading>
         <br>
         <input>
         <br>
         <button> Go Back </button> <button> Clear Highscores</button>
     </section>
-    
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
