@@ -33,7 +33,7 @@ var questionArray = [{
     solution: "console.log"
 }
 ]
-var scoresArray = [];
+var scoresArray = JSON.parse(localStorage.getItem("highscore"))||[];
 var user = document.getElementById("user");
 var winners = document.getElementById("winners")
 var timeRemaining = questionArray.length * 15;
@@ -96,6 +96,22 @@ playerScore.addEventListener("click",function(){
     scores.classList.add("hide");
     highScores.classList.remove("hide");
     winners.innerHTML="";
-    
+    for (var i=0; i<scoresArray.length;i++){
+        var li= document.createElement("li");
+        li.textContent=scoresArray[i];
+        winners.appendChild(li);
+ }  
 })
 
+var backButton = document.getElementById("back");
+var clearScores= document.getElementById("clear");
+
+backButton.addEventListener("click",function(){
+    location.reload(); 
+})
+
+clearScores.addEventListener("click",function(){
+    localStorage.setItem("highscore",JSON.stringify([]))
+    winners.innerHTML="";
+    
+})
