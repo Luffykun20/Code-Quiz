@@ -3,6 +3,8 @@ var questions = document.getElementById("question");
 var scores = document.getElementById("scores");
 var highScores = document.getElementById("highscores");
 var startButtom = document.getElementById("start-quiz");
+var time = document.getElementById("time");
+var arriba = document.getElementById("head");
 var clock = document.getElementById("clock");
 var finalScore = document.getElementById("finalscore");
 var playerScore = document.getElementById("playerscore")
@@ -48,12 +50,12 @@ startButtom.addEventListener("click", function () {
 var index = 0
 function displayQuestion() {
     questions.innerHTML = `
-    <heading>${questionArray[index].question}</heading>
-    <ol id ="choice-1">
-        <li>${questionArray[index].choices[0]}</li>
-        <li>${questionArray[index].choices[1]}</li>
-        <li>${questionArray[index].choices[2]}</li>
-        <li>${questionArray[index].choices[3]}</li>
+    <h2>${questionArray[index].question}</h2>
+    <ol>
+        <li><button class="btn btn-secondary">${questionArray[index].choices[0]}</button></li>
+        <li><button class="btn btn-secondary">${questionArray[index].choices[1]}</button></li>
+        <li><button class="btn btn-secondary">${questionArray[index].choices[2]}</button></li>
+        <li><button class="btn btn-secondary">${questionArray[index].choices[3]}</button></li>
     </ol>
     `
     var li = document.querySelectorAll("li");
@@ -72,7 +74,7 @@ function nextQuestion() {
     }
     else {
         alert("incorrect")
-        timeRemaining = timeRemaining - 15
+        timeRemaining = timeRemaining - 10
     }
     index++
     if (index >= questionArray.length) {
@@ -94,6 +96,7 @@ playerScore.addEventListener("click",function(){
     scoresArray.push(user.value+"-"+clock.textContent);
     localStorage.setItem("highscore",JSON.stringify(scoresArray));
     scores.classList.add("hide");
+    arriba.classList.add("hide");
     highScores.classList.remove("hide");
     winners.innerHTML="";
     for (var i=0; i<scoresArray.length;i++){
@@ -114,4 +117,20 @@ clearScores.addEventListener("click",function(){
     localStorage.setItem("highscore",JSON.stringify([]))
     winners.innerHTML="";
     
+})
+
+var checkScores = document.getElementById("checkScores");
+
+checkScores.addEventListener("click",function(){
+    introduction.classList.add("hide");
+    questions.classList.add("hide");
+    scores.classList.add("hide");
+    arriba.classList.add("hide");
+    highScores.classList.remove("hide");
+    winners.innerHTML="";
+    for (var i=0; i<scoresArray.length;i++){
+        var li= document.createElement("li");
+        li.textContent=scoresArray[i];
+        winners.appendChild(li);
+ }    
 })

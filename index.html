@@ -5,36 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <title>Code Quiz</title>
 </head>
 <body>
-    <heading> View Highscores              Time: 0 </heading>
+    <header id="head" >
+        <div>
+            <button class="btnHeader" id="checkScores">View Highscores</button>
+        </div>
+        <div>
+            <p>Time:<span id="clock">0</span></p>
+        </div>
+    </header>
     <section id="introduction">
         <h1> Coding Quiz Challenge </h1>
         <p> Try to answer the following code-related questions within the time
             limit. Keep in mind that incorrect answers will penalize your scoretime
              by ten seconds!
         </p>
-        <button id ="start-quiz"> Start Quiz </button>
+        <button id ="start-quiz" class="btn btn-primary"> Start Quiz </button>
     </section>
-<span id="clock"></span>
+
     <section id="question" class ="hide">
-        
+
     </section>
 
     <section id="scores" class = "hide">
-        <heading> All done!</heading>
+        <h3> All done!</h3>
         <p> Your final score is<span id="finalscore"></span>   </p>
-        Enter initials <input id = "user"> <button id="playerscore"> Submit </button>
+        Enter initials <input id = "user"> <button id="playerscore" class="btn btn-primary"> Submit </button>
     </section>
 
     <section id="highscores" class = "hide">
-        <heading> Highscores </heading>
+        <h4> Highscores </h4>
         <br>
         <ol id="winners"></ol>
         <br>
         
-        <button id = "back"> Go Back </button> <button id="clear"> Clear Highscores</button>
+        <button id = "back" class="btn btn-primary"> Go Back </button> <button id="clear" class="btn btn-primary"> Clear Highscores</button>
     </section>
     <script src="./assets/js/script.js"></script>
 </body>
