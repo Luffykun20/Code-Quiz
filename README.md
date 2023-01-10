@@ -21,9 +21,9 @@ If you would like to download the code, here are the steps:
 
  (https://luffykun20.github.io/Code-Quiz/)
 
- ```md
-    (assets/pictures/code-quiz.PNG)
-    ```
+ 
+ ![code-quiz](assets/pictures/code-quiz.PNG)
+
 
 ## Credits
 
