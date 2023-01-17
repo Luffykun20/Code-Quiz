@@ -19,7 +19,7 @@ If you would like to download the code, here are the steps:
 
  also, to take quiz directly, follow next link:
 
- (https://luffykun20.github.io/Code-Quiz/)
+ https://luffykun20.github.io/Code-Quiz/
 
  
  ![code-quiz](assets/pictures/code-quiz.PNG)
@@ -30,4 +30,8 @@ If you would like to download the code, here are the steps:
 Bootstrap
 
 https://getbootstrap.com/docs/4.3/getting-started/introduction/
+
+## License
+
+MIT
 
